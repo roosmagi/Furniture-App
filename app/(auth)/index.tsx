@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import Button from '@/components/Button';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
@@ -16,13 +17,18 @@ export default function HomeScreen() {
       <Text style={styles.title}>Here!</Text>
 
       <View style={styles.buttonContainer}>
-        <Pressable style={styles.signUpBtn}>
-          <Text style={styles.btnText}>Sign up</Text>
-        </Pressable>
+        <Button
+          text="Sign Up"
+          onPress={() => router.push('/signup')}
+          buttonStyle={styles.signUpBtn}
+        />
 
-        <Pressable>
-          <Text style={styles.signIn}>Sign in</Text>
-        </Pressable>
+        <Button
+          text="Sign In"
+          onPress={() => router.push('/signin')}
+          buttonStyle={styles.signInBtn}
+          textStyle={styles.signInText}
+        />
       </View>
     </View>
   );
@@ -62,19 +68,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#4F63AC',
     width: 303,
     height: 60,
-    justifyContent: 'center',
-    borderRadius: 8,
     marginBottom: 16,
   },
-  btnText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '600',
+  signInBtn: {
+    backgroundColor: 'transparent',
+    marginHorizontal: 0,
+    marginTop: 10,
+    marginBottom: 0,
+    height: 'auto',
   },
-  signIn: {
+  signInText: {
     color: '#4F63AC',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
+    fontFamily: 'montserrat',
   },
 });
