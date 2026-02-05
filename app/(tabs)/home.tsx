@@ -3,11 +3,16 @@ import { ProductHomeItem } from '@/components/ProductHomeItem';
 import { categories } from '@/data/categories';
 import { products } from '@/data/products';
 import { Image } from 'expo-image';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
+
+  const filteredProducts = useMemo(() => {
+    if (!selectedCategoryId) return products;
+    return products.filter((p) => p.category === selectedCategoryId);
+  }, [selectedCategoryId]);
 
   return (
     <View style={styles.container}>
@@ -37,7 +42,7 @@ export default function HomeScreen() {
       />
 
       <FlatList
-      data={products}
+      data={filteredProducts}
       numColumns={2}
       columnWrapperStyle={styles.row}
       contentContainerStyle={styles.content}
