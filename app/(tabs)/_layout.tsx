@@ -29,8 +29,8 @@ export default function TabLayout() {
             <Image
               source={
                 focused
-                  ? require('@/assets/images/home-solid.svg')
-                  : require('@/assets/images/home.svg')
+                  ? require('@/assets/icons/home-solid.svg')
+                  : require('@/assets/icons/home.svg')
               }
               style={{ width: 24, height: 24, tintColor: color }}
             />
@@ -45,8 +45,8 @@ export default function TabLayout() {
             <Image
               source={
                 focused
-                  ? require('@/assets/images/favorites-solid.svg')
-                  : require('@/assets/images/favorites.svg')
+                  ? require('@/assets/icons/favorites-solid.svg')
+                  : require('@/assets/icons/favorites.svg')
               }
               style={{ width: focused ? 24 : 16, height: focused ? 24 : 20, tintColor: color }}
             />
@@ -61,8 +61,8 @@ export default function TabLayout() {
             <Image
               source={
                 focused
-                  ? require('@/assets/images/profile-solid.svg')
-                  : require('@/assets/images/profile.svg')
+                  ? require('@/assets/icons/profile-solid.svg')
+                  : require('@/assets/icons/profile.svg')
               }
               style={{ width: focused ? 24 : 24, height: focused ? 24 : 24, tintColor: color }}
             />

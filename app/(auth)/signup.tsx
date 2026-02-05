@@ -19,7 +19,7 @@ export default function SignupScreen() {
                 onPress={() => router.back()}
             >
                 <Image
-                    source={require('@/assets/images/back.svg')}
+                    source={require('@/assets/icons/back.svg')}
                     style={styles.backIcon}
                 />
                 <Text style={styles.backText}>Sign Up</Text>
@@ -56,8 +56,8 @@ export default function SignupScreen() {
                         <Image
                             source={
                                 showPassword
-                                    ? require('@/assets/images/eye_closed.svg')
-                                    : require('@/assets/images/eye.svg')
+                                    ? require('@/assets/icons/eye_closed.svg')
+                                    : require('@/assets/icons/eye.svg')
                             }
                             style={styles.eyeImage}
                         />
@@ -72,7 +72,7 @@ export default function SignupScreen() {
                 >
                     {agreedToTerms && (
                         <Image
-                            source={require('@/assets/images/check.svg')}
+                            source={require('@/assets/icons/check.svg')}
                             style={styles.checkImage}
                         />
                     )}
@@ -95,7 +95,7 @@ export default function SignupScreen() {
             <View style={styles.socialButtonContainer}>
                 <Pressable style={styles.googleButton}>
                     <Image
-                        source={require('@/assets/images/google-icon.svg')}
+                        source={require('@/assets/icons/google-icon.svg')}
                         style={styles.googleIcon}
                     />
                 </Pressable>

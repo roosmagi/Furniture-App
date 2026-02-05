@@ -18,7 +18,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('@/assets/images/search.svg')}
+          source={require('@/assets/icons/search.svg')}
           style={styles.searchIcon}
         />
         <Text style={styles.headerText}>Find All You Need</Text>
