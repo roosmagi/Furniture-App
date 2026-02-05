@@ -17,7 +17,7 @@ export default function SigninScreen() {
                 onPress={() => router.back()}
             >
                 <Image
-                    source={require('@/assets/images/back.svg')}
+                    source={require('@/assets/icons/back.svg')}
                     style={styles.backIcon}
                 />
                 <Text style={styles.backText}>Sign In</Text>
@@ -46,8 +46,8 @@ export default function SigninScreen() {
                         <Image
                             source={
                                 showPassword
-                                    ? require('@/assets/images/eye_closed.svg')
-                                    : require('@/assets/images/eye.svg')
+                                    ? require('@/assets/icons/eye_closed.svg')
+                                    : require('@/assets/icons/eye.svg')
                             }
                             style={styles.eyeImage}
                         />
@@ -56,7 +56,7 @@ export default function SigninScreen() {
             />
 
             <View style={styles.buttonContainer}>
-                <Button text="Sign In" />
+                    <Button text="Sign In" />
             </View>
 
             <View style={styles.dividerContainer}>
@@ -68,7 +68,7 @@ export default function SigninScreen() {
             <View style={styles.socialButtonContainer}>
                 <Pressable style={styles.googleButton}>
                     <Image
-                        source={require('@/assets/images/google-icon.svg')}
+                        source={require('@/assets/icons/google-icon.svg')}
                         style={styles.googleIcon}
                     />
                 </Pressable>
