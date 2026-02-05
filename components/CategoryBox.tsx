@@ -28,7 +28,7 @@ export function CategoryBox({ item, selected = false, onPress }: Props) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    minHeight: 80,
+    minHeight: 88,
   },
   box: {
     width: 44,

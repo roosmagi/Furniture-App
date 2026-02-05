@@ -1,10 +1,15 @@
+import { Header } from '@/components/Header';
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 export default function FavoritesScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Favorites</Text>
+       <Header
+              title="Favorites"
+              leftAction="none"
+              rightAction="none"
+            />
     </View>
   );
 }
@@ -13,11 +18,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    alignItems: 'stretch',
+    justifyContent: 'flex-start',
+    padding: 18,
+    paddingTop: 25,
   },
 });

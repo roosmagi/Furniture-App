@@ -1,28 +1,36 @@
 import { CategoryBox } from '@/components/CategoryBox';
+import { Header } from '@/components/Header';
 import { ProductHomeItem } from '@/components/ProductHomeItem';
 import { categories } from '@/data/categories';
 import { products } from '@/data/products';
-import { Image } from 'expo-image';
 import React, { useMemo, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 
 export default function HomeScreen() {
   const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
+  const [keyword, setKeyword] = useState('');
 
   const filteredProducts = useMemo(() => {
-    if (!selectedCategoryId) return products;
-    return products.filter((p) => p.category === selectedCategoryId);
-  }, [selectedCategoryId]);
+    const normalizedKeyword = keyword.trim().toLowerCase();
+    return products.filter((p) => {
+      const matchesCategory = selectedCategoryId ? p.category === selectedCategoryId : true;
+      if (!matchesCategory) return false;
+      if (!normalizedKeyword) return true;
+      const name = String(p.title ?? '').toLowerCase();
+      return name.includes(normalizedKeyword);
+    });
+  }, [selectedCategoryId, keyword]);
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Image
-          source={require('@/assets/icons/search.svg')}
-          style={styles.searchIcon}
-        />
-        <Text style={styles.headerText}>Find All You Need</Text>
-      </View>
+      <Header
+        title="Find All You Need"
+        leftAction="search"
+        rightAction="none"
+        enableSearch
+        keyword={keyword}
+        onKeywordChange={setKeyword}
+      />
 
       <FlatList
         data={categories}
@@ -61,26 +69,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 18,
     backgroundColor: '#fff',
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    backgroundColor: '#fff',
-    gap: 16,
-  },
-  searchIcon: {
-    width: 24,
-    height: 24,
-    tintColor: '#4F63AC',
-  },
-  headerText: {
-    flex: 1,
-    textAlign: 'center',
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#303030',
   },
   listContent: {
     paddingHorizontal: 16,
