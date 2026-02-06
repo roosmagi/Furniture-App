@@ -1,5 +1,5 @@
 import { Colors } from "@/constants/Colors";
-import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
 import React, { useMemo, useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
@@ -31,14 +31,14 @@ export function Header({
 }: Props) {
   const [showSearchInput, setShowSearchInput] = useState(false);
 
-  const leftIconName = useMemo(() => {
-    if (leftAction === "back") return "chevron-back";
-    if (leftAction === "search") return "search";
+  const leftIconSource = useMemo(() => {
+    if (leftAction === "back") return require("@/assets/icons/back.svg");
+    if (leftAction === "search") return require("@/assets/icons/search.svg");
     return null;
   }, [leftAction]);
 
-  const rightIconName = useMemo(() => {
-    if (rightAction === "logout") return "log-out-outline";
+  const rightIconSource = useMemo(() => {
+    if (rightAction === "logout") return require("@/assets/icons/logout.svg");
     return null;
   }, [rightAction]);
 
@@ -54,9 +54,9 @@ export function Header({
     <View style={styles.wrapper}>
       <View style={styles.row}>
         <View style={styles.side}>
-          {leftIconName ? (
+          {leftIconSource ? (
             <Pressable onPress={handleLeft} hitSlop={10}>
-              <Ionicons name={leftIconName as any} size={22} color={Colors.text} />
+              <Image source={leftIconSource} style={styles.icon} tintColor={Colors.brand} />
             </Pressable>
           ) : (
             <View style={styles.sidePlaceholder} />
@@ -68,9 +68,9 @@ export function Header({
         </Text>
 
         <View style={styles.side}>
-          {rightIconName ? (
+          {rightIconSource ? (
             <Pressable onPress={onRightPress} hitSlop={10}>
-              <Ionicons name={rightIconName as any} size={22} color={Colors.text} />
+              <Image source={rightIconSource} style={styles.icon} tintColor={Colors.brand} />
             </Pressable>
           ) : (
             <View style={styles.sidePlaceholder} />
@@ -80,7 +80,7 @@ export function Header({
 
       {enableSearch && showSearchInput ? (
         <View style={styles.searchRow}>
-          <Ionicons name="search" size={18} color={Colors.mutedText} />
+          <Image source={require("@/assets/icons/search.svg")} style={styles.searchIcon} tintColor={Colors.brand} />
           <TextInput
             value={keyword}
             onChangeText={onKeywordChange}
@@ -116,6 +116,10 @@ const styles = StyleSheet.create({
     width: 22,
     height: 22,
   },
+  icon: {
+    width: 20,
+    height: 20,
+  },
   title: {
     flex: 1,
     textAlign: "center",
@@ -136,6 +140,10 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 12,
     paddingVertical: 10,
+  },
+  searchIcon: {
+    width: 18,
+    height: 18,
   },
   searchInput: {
     flex: 1,
