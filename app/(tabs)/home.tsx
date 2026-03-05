@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
   row: {
     paddingHorizontal: 16,
     justifyContent: "space-between",
+    gap: 16,
   },
   content: {
     paddingTop: 8,
