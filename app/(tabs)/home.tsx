@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { ProductHomeItem } from '@/components/ProductHomeItem';
 import { categories } from '@/data/categories';
 import { products } from '@/data/products';
+import { router } from 'expo-router';
 import React, { useMemo, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
@@ -55,7 +56,15 @@ export default function HomeScreen() {
       columnWrapperStyle={styles.row}
       contentContainerStyle={styles.content}
       keyExtractor={(item) => String(item.id)}
-      renderItem={({ item }) => <ProductHomeItem item={item} />}
+      renderItem={({ item }) => (
+        <ProductHomeItem 
+          item={item} 
+          onPress={() => router.push({
+            pathname: '/product/[id]',
+            params: { id: item.id }
+          })}
+        />
+      )}
       ListFooterComponent={<View style={{ height: 24 }} />}
       showsVerticalScrollIndicator={false}
     />  

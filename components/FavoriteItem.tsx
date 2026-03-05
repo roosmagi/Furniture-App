@@ -12,7 +12,7 @@ type Props = {
 export function FavoriteItem({ item, onRemove }: Props) {
   return (
     <View style={styles.row}>
-      <Image source={{ uri: item.image }} style={styles.image} />
+      <Image source={item.image} style={styles.image} />
       <View style={styles.center}>
         <Text style={styles.title} numberOfLines={1}>
           {item.title}

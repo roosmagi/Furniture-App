@@ -13,7 +13,7 @@ export function ProductHomeItem({ item, onPress }: Props) {
     <Pressable onPress={onPress} style={styles.container}>
       <View style={styles.imageContainer}>
         <Image
-          source={{ uri: item.image }}
+          source={item.image}
           style={styles.image}
           contentFit="cover"
         />

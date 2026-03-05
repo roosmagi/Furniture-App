@@ -1,33 +1,37 @@
 export type Product = {
   id: number;
   title: string;
-  image: string;
-  images?: string[];
+  image: string | number;
+  images?: Array<string | number>;
   category: number;
   price: string;
+  description: string;
 };
 
 export const products: Product[] = [
   {
     id: 1,
-    title: "Loft Style Chair",
-    image: "https://grandrapidschair.com/wp-content/uploads/2016/01/250_Brady_Graphite_Honey-1.jpg",
-    category: 1,
-    price: "$ 20.00",
+    title: "Minimal Stand",
+    image: require('@/assets/images/minimal-stand.png'),
+    category: 2,
+    price: "$ 25.00",
+    description: "Minimal Stand is made of by natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now. With 3 different colors, you can easily select the best match for your home. .",
   },
   {
     id: 2,
-    title: "Wood Mini Table",
-    image: "https://ii1.pepperfry.com/media/catalog/product/f/o/800x880/foldable-table-in-natural-colour-by-clasicraft-foldable-table-in-natural-colour-by-clasicraft-ahmtub.jpg",
-    category: 2,
-    price: "$ 25.00",
+    title: "Coffee Chair",
+    image: require('@/assets/images/coffee-chair.png'),
+    category: 1,
+    price: "$ 20.00",
+    description: "A modern and comfortable coffee chair designed for cozy living spaces. Perfect for coffee breaks or relaxing moments with its ergonomic design and durable construction. Compact and easy to maintain.",
   },
   {
     id: 3,
-    title: "Luxe Yellow Armchair",
-    image: "https://www.woods-furniture.co.uk/images/products/standard/7706_8118.jpg",
-    category: 3,
-    price: "$ 45.00",
+    title: "Black Simple Lamp",
+    image: require('@/assets/images/black-simple-lamp.png'),
+    category: 5,
+    price: "$ 12.00",
+    description: "A sleek and minimalist black lamp perfect for any room. Features a simple yet elegant design that complements modern and contemporary interiors. Provides warm lighting and is easy to install and maintain.",
   },
   {
     id: 4,
@@ -35,17 +39,14 @@ export const products: Product[] = [
     image: "https://cdn.shopify.com/s/files/1/0079/2539/9616/products/myakka-chairs-jalkamal-block-print-footstool-28730051264703_2000x.jpg?v=1629217511",
     category: 3,
     price: "$ 80.00",
+    description: "Ülimugav tugitool lõõgastumiseks. Klassikaline disain koos kaasaegse mugavusega. Ideaalne lugemiseks või lõõgastumiseks.",
   },
   {
     id: 5,
-    title: "Velvet Sofa",
-    image: "https://www.housingunits.co.uk/media/catalog/product/cache/60968cec045f20fb06ab5f7720001507/5/5/555685b1a8eecf2133f18451526a4ede.jpg",
-    images: [
-      "https://collinsandhayes-cdn-1.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/02/14101256/V7A1199-800x800.jpg",
-      "https://www.housingunits.co.uk/media/catalog/product/cache/60968cec045f20fb06ab5f7720001507/5/5/555685b1a8eecf2133f18451526a4ede.jpg",
-      "https://media.sofa.com/thumbor/unsafe/https%3A%2F%2Fmedia.sofa.com%2Fmedias%2FSS22-Homepage-Category-Tiles-1-SOFAS.jpg%3Fcontext%3DbWFzdGVyfHJvb3R8MTM1MzYyfGltYWdlL2pwZWd8aDUyL2g0ZC84OTk4ODEwNTgzMDcwLmpwZ3xjNWUzZDYzMjY2NGNhNWJkYjUwNjg4MDlkNzBiZTFlYmNiNmE1YWEyNDEwMTFhYWRlYTI0OGMwZGVlZTE1OWE1",
-    ],
-    category: 4,
-    price: "$ 120.00",
+    title: "Simple Desk",
+    image: require('@/assets/images/simple-desk.png'),
+    category: 2,
+    price: "$ 50.00",
+    description: "A simple and functional desk perfect for any workspace. Features a clean design and durable construction for long-lasting use.",
   },
 ];
