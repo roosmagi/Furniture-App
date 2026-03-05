@@ -1,10 +1,10 @@
+import { FavoriteItem } from "@/components/FavoriteItem";
+import { Header } from "@/components/Header";
+import { Colors } from "@/constants/Colors";
+import type { Product } from "@/data/products";
+import { products } from "@/data/products";
 import React from "react";
-import { View, FlatList, StyleSheet } from "react-native";
-import { Colors } from "../../constants/Colors";
-import { Header } from "../../components/Header";
-import { products } from "../../data/products";
-import { FavoriteItem } from "../../components/FavoriteItem";
-import type { Product } from "../../data/products";
+import { FlatList, StyleSheet, View } from "react-native";
 
 export default function FavoritesScreen() {
   const favorites: Product[] = products.slice(0, 3);
@@ -24,7 +24,18 @@ export default function FavoritesScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: Colors.background },
-  content: { paddingHorizontal: 16, paddingVertical: 12 },
-  separator: { height: 1, backgroundColor: Colors.border, marginVertical: 10 },
+  container: { 
+    flex: 1, 
+    padding: 18,
+    backgroundColor: Colors.background 
+  },
+  content: { 
+    paddingHorizontal: 16, 
+    paddingVertical: 12 
+  },
+  separator: { 
+    height: 1, 
+    backgroundColor: Colors.border, 
+    marginVertical: 10 
+  },
 });
