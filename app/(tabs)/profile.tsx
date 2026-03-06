@@ -19,8 +19,10 @@ export default function ProfileScreen() {
           rightAction="logout"
           onRightPress={() => console.log("logout")}
         />
+        <View style={{ paddingTop: 18 }} >
         <Text style={styles.name}>Elina Hovakimyan</Text>
         <Text style={styles.email}>elina.hovakimyan@gmail.com</Text>
+        </View>
         <View style={styles.listSection}>
           <Pressable onPress={() => router.push('/(modal)/mylisting')}>
             <ListItem title="My Listings" subtitle={`Already have ${num} listings`} />

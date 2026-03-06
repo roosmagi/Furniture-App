@@ -39,12 +39,16 @@ export const products: Product[] = [
     image: "https://cdn.shopify.com/s/files/1/0079/2539/9616/products/myakka-chairs-jalkamal-block-print-footstool-28730051264703_2000x.jpg?v=1629217511",
     category: 3,
     price: "$ 80.00",
-    description: "Ülimugav tugitool lõõgastumiseks. Klassikaline disain koos kaasaegse mugavusega. Ideaalne lugemiseks või lõõgastumiseks.",
+    description: "An ultra-comfortable armchair for relaxing. Classic design with modern comfort. Ideal for reading or unwinding.",
   },
   {
     id: 5,
     title: "Simple Desk",
     image: require('@/assets/images/simple-desk.png'),
+    images: [
+      require('@/assets/images/simple-desk.png'),
+      require('@/assets/images/simple-desk.png'),
+    ],
     category: 2,
     price: "$ 50.00",
     description: "A simple and functional desk perfect for any workspace. Features a clean design and durable construction for long-lasting use.",
