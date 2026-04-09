@@ -56,7 +56,7 @@ export default function SigninScreen() {
             />
 
             <View style={styles.buttonContainer}>
-                    <Button text="Sign In" />
+                    <Button text="Sign In" onPress={() => router.push('/(tabs)/home')} />
             </View>
 
             <View style={styles.dividerContainer}>

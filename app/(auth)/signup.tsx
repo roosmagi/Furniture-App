@@ -83,7 +83,7 @@ export default function SignupScreen() {
             </View>
 
             <View style={styles.buttonContainer}>
-                <Button text="Sign Up" />
+                <Button text="Sign Up" onPress={() => router.push('/(tabs)/home')} />
             </View>
 
             <View style={styles.dividerContainer}>
